@@ -6,41 +6,41 @@
 /*   By: afodil-c <afodil-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 08:32:01 by afodil-c          #+#    #+#             */
-/*   Updated: 2024/11/29 10:29:30 by afodil-c         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:52:58 by afodil-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-int ft_printf_args(char c, va_list args, int i)
-
+int	ft_printf_args(char c, va_list args, int i)
+{
+	if (c == 'c')
+        ecrire un caractere
+    else if (c == 's')
+        ft_putstr
+    else if (c == 'p')
+        ft_putnbr_base
+    else if (c == 'd' || c == 'i')
+        ft_putnbr
+    else if (c == 'u')
+        ft_putnbr mais unsigned
+    else if (c == 'x')
+        ft_putnbr_base
+    else if (c == 'X')
+        ft_putnbr_base
+    else if (c == '%')
+        ft_putchar('%')
+    va_end(args);
+    return (1);
+}
 
 int ft_printf(const char *s, ...)
 {
-    size_t  i;
+    size_t i;
     va_list args;
+    char    *str;
+    int value;
 
-    while (*(s + i))
-    {
-        if (*(s + i) = '%')
-        {
-            ft_printf_args(*(str + i));
-            i++;
-        }
-        else
-        {
-            
-        }
-    }
-
+    value = 0;
+    str = ft
 }
-
-• %c Prints a single character.
-• %s Prints a string (as defined by the common C convention).
-• %p The void * pointer argument has to be printed in hexadecimal format.
-• %d Prints a decimal (base 10) number.
-• %i Prints an integer in base 10.
-• %u Prints an unsigned decimal (base 10) number.
-• %x Prints a number in hexadecimal (base 16) lowercase format.
-• %X Prints a number in hexadecimal (base 16) uppercase format.
-• %% Prints a percent sign
