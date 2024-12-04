@@ -6,31 +6,31 @@
 /*   By: afodil-c <afodil-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 08:32:01 by afodil-c          #+#    #+#             */
-/*   Updated: 2024/12/04 01:05:07 by afodil-c         ###   ########.fr       */
+/*   Updated: 2024/12/04 13:05:56 by afodil-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_printf_args(char c, va_list args, int *value)
+int	ft_printf_args(char c, va_list args, int *value)
 {
 	if (c == 'c')
 		ft_putchar((char)va_arg(args, int), value);
 	else if (c == 's')
 		ft_putstr((char *)va_arg(args, char *), value);
 	else if (c == 'p')
-		ft_putnbr_base((unsigned long long)va_arg(args, unsigned long long), \
-				"0123456789abcdef", value, 'p');
+		ft_printf_p((unsigned long long)va_arg(args, unsigned long long),
+			"0123456789abcdef", value, 'p');
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(args, int), value);
 	else if (c == 'u')
 		ft_putnbr_unsigned(va_arg(args, unsigned int), value);
 	else if (c == 'x')
-		ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", \
-            value, 'x');
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789abcdef", value,
+			'x');
 	else if (c == 'X')
-		ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", /
-            value, 'X');
+		ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF", value,
+			'X');
 	else if (c == '%')
 		ft_putchar('%', value);
 	return (1);

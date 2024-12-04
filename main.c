@@ -1,8 +1,10 @@
-#include <stdio.h> 
+#include "ft_printf.h"
+#include <stdio.h>
+
 
 int	main(void)
 {
-	int	ret1, ret2;
+	int ret1, ret2;
 
 	// 1. Test avec %c (caractères simples)
 	printf("\n=== Test %%c ===\n");
@@ -16,9 +18,13 @@ int	main(void)
 	ret2 = printf("printf    : [%s]\n", "Hello, 42!");
 	printf("Retours   : ft_printf = %d, printf = %d\n", ret1, ret2);
 
+	ret1 = ft_printf("ft_printf : [%s]\n", "");
+	ret2 = printf("printf    : [%s]\n", "");
+	printf("Retours   : ft_printf = %d, printf = %d\n", ret1, ret2);
+
 	// 3. Test avec %p (pointeurs)
 	printf("\n=== Test %%p ===\n");
-	int	num = 42;
+	int num = 42;
 	ret1 = ft_printf("ft_printf : [%p]\n", &num);
 	ret2 = printf("printf    : [%p]\n", &num);
 	printf("Retours   : ft_printf = %d, printf = %d\n", ret1, ret2);
@@ -61,8 +67,10 @@ int	main(void)
 
 	// 8. Cas combinés et chaînes complexes
 	printf("\n=== Cas combinés ===\n");
-	ret1 = ft_printf("ft_printf : [%c %s %p %d %u %x %%]\n", 'A', "Hello", &num, -42, 3000000000, 255);
-	ret2 = printf("printf    : [%c %s %p %d %u %x %%]\n", 'A', "Hello", &num, -42, 3000000000U, 255);
+	ret1 = ft_printf("ft_printf : [%c %s %p %d %u %x %%]\n", 'A', "Hello", &num,
+			-42, 3000000000, 255);
+	ret2 = printf("printf    : [%c %s %p %d %u %x %%]\n", 'A', "Hello", &num,
+			-42, 3000000000U, 255);
 	printf("Retours   : ft_printf = %d, printf = %d\n", ret1, ret2);
 
 	return (0);
