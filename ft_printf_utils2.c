@@ -6,7 +6,7 @@
 /*   By: afodil-c <afodil-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:45:26 by afodil-c          #+#    #+#             */
-/*   Updated: 2024/12/04 13:10:16 by afodil-c         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:12:25 by afodil-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ void	ft_putnbr_base(unsigned long long nbr, char *base, int *value,
 	ft_putchar(base[nbr % 16], value);
 }
 
-void    ft_printf_p((unsigned long long)va_arg(args, unsigned long long),
-			"0123456789abcdef", value, 'p')
+void	ft_printf_p(unsigned long long nbr, char *base, int *value, char type)
 {
-		if (nbr == 0)
-        {
-            ft_putstr("(nil)", value);
-            return;
-        }
-        ft_putstr("0x", value);
-		ft_putnbr_base((unsigned long long)va_arg(args, unsigned long long),
-			"0123456789abcdef", value, 'p');
+	if (nbr == 0)
+	{
+		ft_putstr("(nil)", value);
+		return ;
+	}
+	ft_putstr("0x", value);
+	ft_putnbr_base(nbr, base, value, type);
 }

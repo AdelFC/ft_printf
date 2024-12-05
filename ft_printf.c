@@ -6,7 +6,7 @@
 /*   By: afodil-c <afodil-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 08:32:01 by afodil-c          #+#    #+#             */
-/*   Updated: 2024/12/04 13:05:56 by afodil-c         ###   ########.fr       */
+/*   Updated: 2024/12/05 08:12:55 by afodil-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_printf_args(char c, va_list args, int *value)
 	else if (c == 's')
 		ft_putstr((char *)va_arg(args, char *), value);
 	else if (c == 'p')
-		ft_printf_p((unsigned long long)va_arg(args, unsigned long long),
-			"0123456789abcdef", value, 'p');
+		ft_printf_p(va_arg(args, unsigned long long), "0123456789abcdef", value,
+			'p');
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(args, int), value);
 	else if (c == 'u')
