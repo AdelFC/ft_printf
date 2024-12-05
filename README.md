@@ -1,11 +1,5 @@
 # ft_printf
 
-Voici un exemple de contenu pour le fichier `README.md` :
-
----
-
-# ft_printf
-
 `ft_printf` est une réimplémentation simplifiée de la fonction standard `printf` en C, conçue pour formater et afficher des chaînes de caractères avec différents types d'arguments.
 
 ## Fonctionnalités
